@@ -1,0 +1,19 @@
+.pic{width: 80%;
+position: relative;
+margin: 0 auto;
+zoom:50%;}
+
+.picClick   { 
+    transform: translate(-300px,-200px); /* Standard syntax */
+    zoom:150%;
+}}
+
+
+ .docInfo form input {
+font-size:1.7em;
+}
+form .docInfo
+{
+font-size: 2em;
+padding: 1em;
+}
