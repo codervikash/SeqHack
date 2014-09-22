@@ -24,7 +24,6 @@
 
 
 			<section id="docr" class="docresult">
-            <form action="/conferm/{{v['doctors'][0]['doctor_name']}}" method="post">
 		<div class="docContent">
 
 			<div class="user"><img src="{{v['doctors'][0]['photos'][0]['url']}}"></div>
@@ -39,7 +38,6 @@
 			<div class="docAvail">
 				<p>{{v['doctors'][0]['locality']}}</p><h2>Mon-Sat</h2><p>10:00AM-6:00PM</p>
 			</div>
-			<button  id="fsub2" >more </button>
 
 
 		</div>
@@ -51,14 +49,14 @@
 
 </table>
 
-<button class="box" id="fsub1" type="submit">Book Yor Appointment </button>
-</form>
+<a href="https://seqhack.appspot.com/conferm/{{v['doctors'][0]['doctor_name']}}"><button class="box" id="fsub1">Book Yor Appointment </button></a>
+
 			</section>
 
 
 
             <section id="docr" class="docresult">
-            <form action="/conferm/{{v['doctors'][1]['doctor_name']}}" method="post">
+
 
         <div class="docContent">
 
@@ -74,7 +72,6 @@
             <div class="docAvail">
                 <p>{{v['doctors'][1]['locality']}}</p><h2>Mon-Sat</h2><p>10:00AM-6:00PM</p>
             </div>
-            <button  id="fsub2" >more </button>
 
 
         </div>
@@ -85,12 +82,11 @@
             <table class="box">
 
 </table>
-<button class="box" id="fsub1" type="submit">Book Yor Appointment </button></form>
+<a href="https://seqhack.appspot.com/conferm/{{v['doctors'][1]['doctor_name']}}"><button class="box" id="fsub1">Book Yor Appointment </button></a>
             </section>
 
 
             <section id="docr" class="docresult">
-            <form action="/conferm/{{v['doctors'][2]['doctor_name']}}" method="post">
 
         <div class="docContent">
 
@@ -106,8 +102,6 @@
             <div class="docAvail">
                 <p>{{v['doctors'][2]['locality']}}</p><h2>Mon-Sat</h2><p>10:00AM-6:00PM</p>
             </div>
-            <button  id="fsub2" >more </button>
-
 
         </div>
         <div class="oDetails box"><p>{{v['doctors'][2]['summary']}}</p>
@@ -117,7 +111,7 @@
             <table class="box">
 
 </table>
-<button class="box" id="fsub1" type="submit">Book Yor Appointment </button></form>
+<a href="https://seqhack.appspot.com/conferm/{{v['doctors'][2]['doctor_name']}}"><button class="box" id="fsub1">Book Yor Appointment </button></a>
             </section>
 			</div>
 		</div><!-- /container -->
@@ -125,8 +119,8 @@
 $(".box").hide();
 
 
-$("#fsub2").click(function(){
-    $(".docresult").toggleClass("flip");
+$(".docresult").click(function(){
+    $(this).toggleClass("flip");
     $(".docresult img").toggleClass("user img");
     $(".box").toggle();
 

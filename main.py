@@ -83,7 +83,7 @@ class DocterProfileHandler(webapp2.RequestHandler):
 
 
 class ConfermHandler(webapp2.RequestHandler):
-    def post(self,**kwargs):
+    def get(self,**kwargs):
         name = kwargs['name']
         params = {
             'v' : name
@@ -92,11 +92,18 @@ class ConfermHandler(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('endpage.html')
         self.response.write(template.render(params))
 
+class ThanksHandler(webapp2.RequestHandler):
+    def get(self):
+        template = JINJA_ENVIRONMENT.get_template('Thankyou.html')
+        self.response.write(template.render())
+
+
 
 
 
 app = webapp2.WSGIApplication([
     webapp2.Route('/', handler=MainHandler),
     webapp2.Route('/profile', handler=DocterProfileHandler),
-    webapp2.Route('/conferm/<name:.*>', handler=ConfermHandler)
+    webapp2.Route('/conferm/<name:.*>', handler=ConfermHandler),
+    webapp2.Route('/thanks', handler=ThanksHandler)
 ], debug=True)
